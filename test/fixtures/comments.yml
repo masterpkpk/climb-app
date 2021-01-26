@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  climber_id: 1
+  climb_id: 1
+  content: MyString
+
+two:
+  climber_id: 1
+  climb_id: 1
+  content: MyString

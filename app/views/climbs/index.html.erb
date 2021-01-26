@@ -1,0 +1,8 @@
+<br>
+<% @climbs.each do |climb| %>
+  <%= climb.name %> <br>
+  <%= climb.difficulty %> <br>
+  <%= climb.location %> <br>
+  <%= button_to "Comments", climb_path(climb), method: :get %> <br> <br>
+<% end %>
+

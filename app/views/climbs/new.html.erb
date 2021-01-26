@@ -1,0 +1,23 @@
+<%= form_for @climb do |f|%>
+  <br>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <br>
+  <%= f.label :difficulty %>
+  <%= f.text_field :difficulty %>
+  <br>
+  <br>
+  <%= f.label :location %>
+  <%= f.text_field :location %>
+  <br>
+  <br>
+    <%= f.fields_for :comments, @climb.comments.build do |c|%>
+    <%= c.hidden_field :climb_id %>
+    <%= c.label :climber %>
+    <%= c.text_field :climber_id %> <br>
+    <%= c.label :content, "Comment"%>
+    <%= c.text_area :content %> <br> <br>
+    <% end %>
+  <%= f.submit %>
+<% end %>
