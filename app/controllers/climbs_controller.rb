@@ -19,7 +19,7 @@ class ClimbsController < ApplicationController
       redirect_to climb_path(@climb)
       
     else
-      flash.now[:error] = "Whoops!"
+      
       render :new
     end
   end
