@@ -15,10 +15,11 @@ class ClimbsController < ApplicationController
   def create
     @climb = Climb.create(climb_params)
     if @climb.save
-      binding.pry
+     
       redirect_to climb_path(@climb)
       
     else
+      flash.now[:error] = "Whoops!"
       render :new
     end
   end
@@ -45,6 +46,6 @@ class ClimbsController < ApplicationController
 
   private   
     def climb_params
-      params.require(:climb).permit(:name, :difficulty, :location, comments_attributes: [:climber_id, :climb_id, :content])
+      params.require(:climb).permit(:name, :difficulty, :location, comments_attributes: [:user_id, :climb_id, :content])
     end
 end

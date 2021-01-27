@@ -5,9 +5,8 @@
 <%= @climb.location %> <br> <br>
 
 <%= form_for @climb.comments.build do |f| %>
-  <%= f.hidden_field :climb_id %>
-  <%= f.label :climber %>
-  <%= f.text_field :climber_id %>
+  <%= f.hidden_field :climb_id, value: @climb.id %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
   <br>
   <%= f.label :content %> <br>
   <%= f.text_area :content %>
@@ -23,7 +22,7 @@
 <% if @climb.comments %>
   <% @climb.comments.each do |comment|%>
     <% if comment.id != nil %>
-      <%="#{comment.climber.username} says: #{comment.content}."%>
+      <%="#{comment.user.email} says: #{comment.content}."%>
       <br> <br>
     <% end %>
   <% end %>

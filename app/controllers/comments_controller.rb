@@ -15,7 +15,7 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.create(comment_params)
    
-    redirect_to climbs_path
+    redirect_to climb_path(@comment.climb)
   end
 
   # def edit
@@ -40,6 +40,6 @@ class CommentsController < ApplicationController
 
   private   
     def comment_params
-      params.require(:comment).permit(:content, :climb_id, :climber_id)
+      params.require(:comment).permit(:content, :climb_id, :user_id)
     end
 end

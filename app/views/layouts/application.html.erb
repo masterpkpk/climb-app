@@ -15,9 +15,16 @@
     <nav>
     <div class="nav-wrapper">
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="/home">Home</a></li>
-        <li><a href="/climbs/new">Add Climbs</a></li>
-        <li><a href="/climbs">All Climbs</a></li>
+        <% if user_signed_in? %>
+            <li> <%= current_user.email %> </li>
+            <li> <%= link_to "Logout", destroy_user_session_path, method: "DELETE" %></li>
+            <li> <%= link_to "Home", root_path %> </li>
+            <li> <%= link_to "Add Climbs", new_climb_path  %></li>
+            <li> <%= link_to "All Climbs", climbs_path  %></li>
+          <% else %>
+            <li> <%= link_to "Sign up", new_user_registration_path %> </li>
+            <li> <%= link_to "Sign in", new_user_session_path %> </li>
+          <% end %>
       </ul>
     </div>
   </nav>

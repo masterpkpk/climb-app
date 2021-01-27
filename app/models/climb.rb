@@ -1,5 +1,12 @@
 class Climb < ApplicationRecord
+
+  validates :name, presence: true, uniqueness: true
+
+
   has_many :comments
-  has_many :climbers, through: :comments
+  has_many :users, through: :comments
+
   accepts_nested_attributes_for :comments
+
+
 end
