@@ -13,9 +13,14 @@ class CommentsController < ApplicationController
   # end
 
   def create
-    @comment = Comment.create(comment_params)
-   
-    redirect_to climb_path(@comment.climb)
+    @comment = Comment.new(comment_params)
+    @climb = @comment.climb
+    if comment_params[:content] == ""
+      render :'climbs/show' 
+    else
+      @comment.save
+      redirect_to climb_path(@comment.climb)
+    end
   end
 
   # def edit

@@ -1,8 +1,9 @@
 <br>
 
-<%= @climb.name %> <br>
-<%= @climb.difficulty%> <br>
-<%= @climb.location %> <br> <br>
+<h4> Name: <%= @climb.name %> </h4>
+<h4> Difficulty: <%= @climb.difficulty%> </h4>
+<h4> Crag: <%= @climb.location %> </h4>
+<h4> Climb Type: <%= @climb.climb_type.name %> </h4> <br>
 
 <%= form_for @climb.comments.build do |f| %>
   <%= f.hidden_field :climb_id, value: @climb.id %>

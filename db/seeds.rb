@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+ClimbType.create(name: "Sport")
+ClimbType.create(name: "Bouldering")
+ClimbType.create(name: "Trad")

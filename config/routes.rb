@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :climb_types
   resources :comments
   resources :climbs
   devise_for :users

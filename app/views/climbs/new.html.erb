@@ -1,23 +1,26 @@
 <%= form_for @climb do |f|%>
   <br>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
   <br>
   <br>
-  <%= f.label :difficulty %>
-  <%= f.text_field :difficulty %>
+  <div>
+    <%= f.label :difficulty %>
+    <%= f.text_field :difficulty %>
+  </div>
   <br>
   <br>
-  <%= f.label :location %>
-  <%= f.text_field :location %>
+  <div>
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+  </div>
   <br>
   <br>
-    <%= f.fields_for :comments, @climb.comments.build do |c|%>
-    <%= c.hidden_field :climb_id, value: @climb.id %>
-    <%= c.hidden_field :user_id, value: current_user.id %> 
-    
-    <%= c.label :content, "Comment"%>
-    <%= c.text_area :content %> <br> <br>
-    <% end %>
+  <div>
+    <%= f.collection_select :climb_type_id, ClimbType.all, :id, :name, include_blank: "Select Climb Type"%>
+  </div> 
+  <br>
   <%= f.submit %>
 <% end %>

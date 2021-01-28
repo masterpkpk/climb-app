@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_27_193937) do
+ActiveRecord::Schema.define(version: 2021_01_28_200547) do
+
+  create_table "climb_types", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "climbs", force: :cascade do |t|
     t.string "name"
@@ -18,6 +24,7 @@ ActiveRecord::Schema.define(version: 2021_01_27_193937) do
     t.string "location"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "climb_type_id"
   end
 
   create_table "comments", force: :cascade do |t|
