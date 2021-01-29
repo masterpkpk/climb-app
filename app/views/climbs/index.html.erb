@@ -1,7 +1,7 @@
 <br>
 <% @climbs.each do |climb| %>
-  <%= climb.name %> <br>
-  <%= climb.difficulty %> <br>
-  <%= climb.location %> <br>
+  <h5> <%= "Climb: #{climb.name}" %> </h5> 
+  <h5> <%= "Difficulty: #{climb.difficulty}" %> </h5> 
+  <h5> <%= "Crag: #{climb.location}" %> </h5> 
   <%= button_to "Comments", climb_path(climb), method: :get %> <br> <br>
 <% end %>
