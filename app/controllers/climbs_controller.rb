@@ -14,6 +14,7 @@ class ClimbsController < ApplicationController
   end
 
   def create
+    @climb = Climb.create(climb_params)
     if @climb.save 
       redirect_to climb_path(@climb)
     else

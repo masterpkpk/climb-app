@@ -26,6 +26,7 @@ gem 'devise', github: 'heartcombo/devise', branch: 'ca-omniauth-2'
 # gem 'image_processing', '~> 1.2'
 gem 'therubyracer'
 gem 'omniauth'
+gem 'omniauth-rails_csrf_protection'
 gem 'omniauth-facebook'
 
 # Reduces boot times through caching; required in config/boot.rb
