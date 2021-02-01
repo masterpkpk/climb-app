@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :climb_types
+  resources :climb_types do
+    resources :climbs, [:mew, :create, :index]
+  end 
   resources :comments
   resources :climbs
   
