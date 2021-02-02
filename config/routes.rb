@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
+  resources :grades
   resources :climb_types do
-    resources :climbs, [:mew, :create, :index]
+    resources :climbs, only: [:new, :create, :index]
   end 
   resources :comments
   resources :climbs

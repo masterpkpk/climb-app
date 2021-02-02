@@ -1,4 +1,4 @@
-<%= form_for @climb do |f|%>
+<%= form_for [@climb_type, @climb] do |f|%>
   <br>
   <div>
     <%= f.label :name %>
@@ -7,22 +7,18 @@
   <br>
   <br>
   <div>
+    <%= f.collection_select :grade_id, Grade.all, :id, :rating, include_blank: "Select Grade"%>
+  </div>
+  <br>
+  <br>
+  <div>
     <%= f.label :location %>
     <%= f.text_field :location %>
   </div>
   <br>
-  <br>
-  <div>
-    <%= f.collection_select :grade_id, Grade.all, :id, :rating, include_blank: "Select Grade"%>
-    
-  </div>
-  <br>
-  <br>
-  <div>
-    <%= f.collection_select :climb_type_id, ClimbType.all, :id, :name, include_blank: "Select Climb Type"%>
-  </div> 
-  <br>
+    <%= f.hidden_field :climb_type_id%>
   <%= f.submit %>
+  
 <% end %>
 
 <script>$(document).ready(function(){
