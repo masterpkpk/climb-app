@@ -24,8 +24,10 @@
   <% @climb.comments.each do |comment|%>
     <% if comment.id != nil %>
       <%="#{comment.user.email} says: #{comment.content}."%> <br>
-      <%= link_to "Edit", edit_comment_path(comment)%>
-      <%= link_to "Delete", comment_path(comment), method: "DELETE"%>
+      <% if current_user.id == comment.user_id %>
+        <%= link_to "Edit", edit_comment_path(comment)%>
+        <%= link_to "Delete", comment_path(comment), method: "DELETE"%>
+      <% end %>
 
       <br> <br>
     <% end %>

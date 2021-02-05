@@ -3,6 +3,6 @@
   <h5> <%= climb.grade.rating %> </h5>
   <h5> <%= climb.location %> </h5>
   <h5> <%= climb.climb_type.name %> </h5> 
-  <%= link_to climb_path(climb)%><br> 
+  <%= button_to "See Climb", climb_path(climb) %><br> <br> 
 <% end %>
   
