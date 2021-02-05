@@ -11,7 +11,11 @@ class Climb < ApplicationRecord
   accepts_nested_attributes_for :comments, reject_if: :all_blank
   accepts_nested_attributes_for :climb_type
 
-  
+
+  private 
+    def self.advanced_climbs
+      climbs = self.all.where("grade_id > ?", 7)
+  end
 
 
 end

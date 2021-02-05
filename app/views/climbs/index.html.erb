@@ -1,4 +1,12 @@
 <br>
+<%= link_to "Sport climbs", climb_type_climbs_path(1)%> <br>
+<%= link_to "Boulder climbs", climb_type_climbs_path(2)%> <br>
+<%= link_to "Trad climbs", climb_type_climbs_path(3)%> <br> <br> 
+
+<%= link_to "Advanced climbs", grades_path%>
+
+
+
 <% @climbs.each do |climb| %>
   <h5> <%= "Climb: #{climb.name}" %> </h5> 
   <h5> <%= "Grade: #{climb.grade.rating}" %> </h5> 
