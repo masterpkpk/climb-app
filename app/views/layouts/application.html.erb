@@ -22,7 +22,7 @@
     
 
 
-  <body class = "container">
+  <body class="container">
     <br>
     <nav class="red darken-3">
     <div class="nav-wrapper" >
@@ -31,7 +31,7 @@
             <li> <%= current_user.email %> </li>
             <li> <%= link_to "Logout", destroy_user_session_path, method: "DELETE" %></li>
             <li> <%= link_to "Home", root_path %> </li>
-            <li> <%= link_to "Add Climbs", new_climb_path  %></li>
+            <li> <%= link_to "Add Climb", new_climb_path  %></li>
             <li> <%= link_to "All Climbs", climbs_path  %></li>
           <% else %>
             <li> <%= link_to "Sign up", new_user_registration_path %> </li>
