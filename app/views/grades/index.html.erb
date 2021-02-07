@@ -1,8 +1,14 @@
+<h3> Advanced Climbs </h3>
+
+<br>
+
 <% @climbs.advanced_climbs.each do |climb| %>
-  <h5> <%= climb.name %> </h5>
-  <h5> <%= climb.grade.rating %> </h5>
-  <h5> <%= climb.location %> </h5>
-  <h5> <%= climb.climb_type.name %> </h5> 
-  <%= button_to "See Climb", climb_path(climb) %><br> <br> 
+  <div>
+    <h5> <%= climb.name %> </h5>
+    <h5> <%= climb.grade.rating %> </h5>
+    <h5> <%= climb.location %> </h5>
+    <h5> <%= climb.climb_type.name %> </h5> 
+    <%= button_to "See Climb", climb_path(climb) %><br> <br> 
+  </div>
 <% end %>
   
