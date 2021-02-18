@@ -2,14 +2,6 @@
 
 <br>
 
-<% @climbs.advanced_climbs.each do |climb| %>
-  <div>
+<%= render @climbs.advanced_climbs %>
   
-    <h5> <%= climb.name %> </h5>
-    <h5> <%= climb.grade.rating %> </h5>
-    <h5> <%= climb.location %> </h5>
-    <h5> <%= climb.climb_type.name %> </h5> 
-    <%= button_to "See Climb", climb_path(climb),:method => :get %><br> <br> 
-  </div>
-<% end %>
   
