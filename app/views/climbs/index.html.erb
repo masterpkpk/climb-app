@@ -9,13 +9,6 @@
 
 
 
-<% @climbs.each do |climb| %>
-  <div>
-    <h5> <%= "Climb: #{climb.name}" %> </h5> 
-    <h5> <%= "Grade: #{climb.grade.rating}" %> </h5> 
-    <h5> <%= "Crag: #{climb.location}" %> </h5> 
-    <h5> <%= "Type: #{climb.climb_type.name}" %> </h5>
-    <%= button_to "See climb", climb_path(climb), method: :get %> <br> <br>
-  </div>
+<%= render @climbs %>
+  
 
-<% end %>
