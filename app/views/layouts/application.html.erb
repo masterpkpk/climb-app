@@ -20,43 +20,16 @@
   
   </head>
     
-
-
   <body class="container">
+    
     <br>
-    <nav class="red darken-3">
-    <div class="nav-wrapper" >
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <% if user_signed_in? %>
-            <li> <%= current_user.email %> </li>
-            <li> <%= link_to "Logout", destroy_user_session_path, method: "DELETE" %></li>
-            <li> <%= link_to "Home", root_path %> </li>
-            <li> <%= link_to "Add Climb", new_climb_path  %></li>
-            <li> <%= link_to "All Climbs", climbs_path  %></li>
-          <% else %>
-            <li> <%= link_to "Sign up", new_user_registration_path %> </li>
-            <li> <%= link_to "Sign in", new_user_session_path %> </li>
-            <li> <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path, method: :post %> </li>
-          <% end %>
-      </ul>
-    </div>
-  </nav>
-  
     
- 
-    
-  
-
-  <% if flash[:error] %>
-    <% flash[:error].each do |error| %>
-      <p><%= error %></p>
-    <% end %>
-  <% end %>
-
-  <%= content_tag("p", flash[:notice]) if flash[:notice] %>
+    <%= render partial: 'layouts/nav'%>
+    <%= render partial: 'layouts/errors'%>
     
     <%= yield %>
   </body>
+  
 </html>
 
 
